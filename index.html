@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Cruise | Gestión de Créditos Vehiculares</title>
+  <meta name="description" content="Plataforma interna para instituciones financieras en Perú que simula y gestiona créditos vehiculares con precisión y trazabilidad." />
+
+  <!-- Google Fonts: Syne (headlines) + Inter (body) + JetBrains Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== BACKGROUND ========== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--top" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--bottom" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__brand">
+        <div class="navbar__logo">
+          <i data-lucide="layers" class="icon-sm"></i>
+        </div>
+        <span class="navbar__name">Capital Cruise</span>
+      </a>
+      <div class="navbar__links" id="nav-links">
+        <a href="#problems" class="navbar__link">Problemas</a>
+        <a href="#how-it-works" class="navbar__link">Cómo funciona</a>
+        <a href="#features" class="navbar__link">Características</a>
+        <a href="#for-who" class="navbar__link">Para quién</a>
+      </div>
+      <div class="navbar__right">
+        <a href="#cta" class="btn btn--primary btn--sm" id="nav-login-btn">Solicitar demo</a>
+        <button class="navbar__burger" id="nav-burger" aria-label="Abrir menú">
+          <i data-lucide="menu" class="icon-sm"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <i data-lucide="shield-check" class="icon-xs"></i>
+          <span>Plataforma financiera certificada</span>
+        </div>
+        <h1 class="hero__title">
+          Gestión de créditos vehiculares <span class="text-accent">sin errores</span>
+        </h1>
+        <p class="hero__subtitle">
+          Capital Cruise centraliza la simulación y estructuración de créditos vehiculares para que tus asesores presenten ofertas precisas, trazables y profesionales en minutos.
+        </p>
+        <div class="hero__actions">
+          <a href="#cta" class="btn btn--primary btn--lg" id="hero-demo-btn">
+            Solicitar demo
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg" id="hero-howworks-btn">
+            <i data-lucide="play" class="icon-sm"></i>
+            Ver cómo funciona
+          </a>
+        </div>
+        <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-value">50+</span>
+            <span class="hero__metric-label">Instituciones</span>
+          </div>
+          <div class="hero__metric-divider"></div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">99.9%</span>
+            <span class="hero__metric-label">Precisión</span>
+          </div>
+          <div class="hero__metric-divider"></div>
+          <div class="hero__metric">
+            <span class="hero__metric-value">2min</span>
+            <span class="hero__metric-label">Por simulación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__visual-glow" aria-hidden="true"></div>
+        <!-- Dashboard Mockup -->
+        <div class="dashboard" id="dashboard-mockup">
+          <div class="dashboard__header">
+            <div class="dashboard__dots">
+              <span class="dashboard__dot dashboard__dot--red"></span>
+              <span class="dashboard__dot dashboard__dot--yellow"></span>
+              <span class="dashboard__dot dashboard__dot--green"></span>
+            </div>
+            <div class="dashboard__title-bar">
+              <i data-lucide="table-2" class="icon-xs"></i>
+              Cronograma de Pagos
+            </div>
+          </div>
+          <div class="dashboard__body">
+            <div class="dashboard__stats">
+              <div class="dashboard__stat">
+                <span class="dashboard__stat-label">TEA</span>
+                <span class="dashboard__stat-value">15.00%</span>
+              </div>
+              <div class="dashboard__stat">
+                <span class="dashboard__stat-label">TEM</span>
+                <span class="dashboard__stat-value">1.17%</span>
+              </div>
+              <div class="dashboard__stat">
+                <span class="dashboard__stat-label">Plazo</span>
+                <span class="dashboard__stat-value">48 meses</span>
+              </div>
+            </div>
+            <div class="dashboard__table-wrap">
+              <table class="dashboard__table">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th class="text-right">Saldo Inicial</th>
+                    <th class="text-right">Interés</th>
+                    <th class="text-right">Amort.</th>
+                    <th class="text-right">Cuota</th>
+                    <th class="text-right">Saldo Final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td class="text-right mono">S/ 50,000.00</td><td class="text-right mono">S/ 625.00</td><td class="text-right mono">S/ 1,042.00</td><td class="text-right mono accent-text">S/ 1,667.00</td><td class="text-right mono">S/ 48,958.00</td></tr>
+                  <tr><td>2</td><td class="text-right mono">S/ 48,958.00</td><td class="text-right mono">S/ 612.00</td><td class="text-right mono">S/ 1,055.00</td><td class="text-right mono accent-text">S/ 1,667.00</td><td class="text-right mono">S/ 47,903.00</td></tr>
+                  <tr><td>3</td><td class="text-right mono">S/ 47,903.00</td><td class="text-right mono">S/ 599.00</td><td class="text-right mono">S/ 1,068.00</td><td class="text-right mono accent-text">S/ 1,667.00</td><td class="text-right mono">S/ 46,835.00</td></tr>
+                  <tr><td>4</td><td class="text-right mono">S/ 46,835.00</td><td class="text-right mono">S/ 585.00</td><td class="text-right mono">S/ 1,082.00</td><td class="text-right mono accent-text">S/ 1,667.00</td><td class="text-right mono">S/ 45,753.00</td></tr>
+                  <tr><td>5</td><td class="text-right mono">S/ 45,753.00</td><td class="text-right mono">S/ 572.00</td><td class="text-right mono">S/ 1,095.00</td><td class="text-right mono accent-text">S/ 1,667.00</td><td class="text-right mono">S/ 44,658.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="dashboard__footer">
+              <div class="dashboard__indicators">
+                <span>TCEA: <strong class="accent-text">16.42%</strong></span>
+                <span>VAN: <strong>S/ 2,340.00</strong></span>
+              </div>
+              <span>TIR: <strong>1.31%</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLEMS ========== -->
+  <section class="section" id="problems">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">
+          <i data-lucide="alert-circle" class="icon-xs"></i>
+          Desafíos actuales
+        </span>
+        <h2 class="section__title">Los problemas que resolvemos</h2>
+        <p class="section__subtitle">
+          Las instituciones financieras enfrentan desafíos críticos en la gestión de créditos vehiculares
+        </p>
+      </div>
+      <div class="timeline" id="problems-timeline">
+        <div class="timeline__item" id="problem-1">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--warning"></div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon timeline__icon--warning">
+              <i data-lucide="alert-triangle" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Cálculos manuales en Excel con errores</h3>
+              <p class="timeline__description">Las fórmulas manuales generan inconsistencias que afectan la precisión de las ofertas crediticias.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item" id="problem-2">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--warning"></div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon timeline__icon--warning">
+              <i data-lucide="shuffle" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Simulaciones dispersas sin trazabilidad</h3>
+              <p class="timeline__description">Información fragmentada en múltiples archivos dificulta el seguimiento y auditoría de operaciones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item" id="problem-3">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--warning"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon timeline__icon--warning">
+              <i data-lucide="users" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Ofertas vehiculares inconsistentes entre asesores</h3>
+              <p class="timeline__description">Cada asesor calcula de forma diferente, generando disparidad en las propuestas al cliente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section section--alt" id="how-it-works">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">
+          <i data-lucide="route" class="icon-xs"></i>
+          Proceso simple
+        </span>
+        <h2 class="section__title">Cómo funciona</h2>
+        <p class="section__subtitle">
+          Un proceso simple de cuatro pasos para generar ofertas crediticias impecables
+        </p>
+      </div>
+      <div class="timeline timeline--steps" id="steps-timeline">
+        <div class="timeline__item" id="step-1">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--numbered">01</div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon">
+              <i data-lucide="user-plus" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Registra al cliente y vehículo</h3>
+              <p class="timeline__description">Ingresa los datos del cliente y las características del vehículo a financiar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item" id="step-2">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--numbered">02</div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon">
+              <i data-lucide="sliders-horizontal" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Configura las condiciones del crédito</h3>
+              <p class="timeline__description">Define tasa, plazo, periodos de gracia y tipo de cuota según las políticas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item" id="step-3">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--numbered">03</div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon">
+              <i data-lucide="calculator" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">El sistema genera el cronograma</h3>
+              <p class="timeline__description">Automáticamente se calcula el cronograma de pagos con todos los indicadores.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item" id="step-4">
+          <div class="timeline__marker">
+            <div class="timeline__dot timeline__dot--numbered">04</div>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__icon">
+              <i data-lucide="presentation" class="icon-md"></i>
+            </div>
+            <div class="timeline__text">
+              <h3 class="timeline__title">Presenta la oferta al cliente</h3>
+              <p class="timeline__description">Entrega una propuesta profesional con VAN, TIR y TCEA calculados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">
+          <i data-lucide="sparkles" class="icon-xs"></i>
+          Funcionalidades
+        </span>
+        <h2 class="section__title">Características</h2>
+        <p class="section__subtitle">
+          Herramientas diseñadas específicamente para el mercado financiero peruano
+        </p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" id="feature-1">
+          <div class="card__icon">
+            <i data-lucide="calculator" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">Método francés vencido ordinario</h3>
+          <p class="card__description">
+            Cálculos precisos con meses de 30 días siguiendo el estándar financiero peruano.
+          </p>
+        </div>
+        <div class="card" id="feature-2">
+          <div class="card__icon">
+            <i data-lucide="percent" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">Tasas nominales y efectivas</h3>
+          <p class="card__description">
+            Conversión automática a TEM para simplificar los cálculos de cuotas.
+          </p>
+        </div>
+        <div class="card" id="feature-3">
+          <div class="card__icon">
+            <i data-lucide="clock" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">Periodos de gracia</h3>
+          <p class="card__description">
+            Soporte para gracia total y parcial según las necesidades del cliente.
+          </p>
+        </div>
+        <div class="card" id="feature-4">
+          <div class="card__icon">
+            <i data-lucide="car" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">Compra Inteligente</h3>
+          <p class="card__description">
+            Cuota balloon configurable para esquemas de financiamiento flexibles.
+          </p>
+        </div>
+        <div class="card" id="feature-5">
+          <div class="card__icon">
+            <i data-lucide="trending-up" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">VAN, TIR y TCEA</h3>
+          <p class="card__description">
+            Indicadores calculados automáticamente desde el flujo del deudor.
+          </p>
+        </div>
+        <div class="card" id="feature-6">
+          <div class="card__icon">
+            <i data-lucide="coins" class="icon-md"></i>
+          </div>
+          <h3 class="card__title">Multidivisa integrada</h3>
+          <p class="card__description">
+            Operaciones en soles y dólares con tipo de cambio actualizado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOR WHO ========== -->
+  <section class="section section--alt" id="for-who">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">
+          <i data-lucide="target" class="icon-xs"></i>
+          Audiencia
+        </span>
+        <h2 class="section__title">Diseñado para equipos financieros</h2>
+        <p class="section__subtitle">
+          Cada rol en tu organización encuentra valor en Capital Cruise
+        </p>
+      </div>
+      <div class="grid grid--3">
+        <div class="role-card" id="role-1">
+          <div class="role-card__icon">
+            <i data-lucide="user-check" class="icon-lg"></i>
+          </div>
+          <h3 class="role-card__title">Asesores de crédito</h3>
+          <p class="role-card__description">
+            Generan simulaciones precisas en segundos y presentan ofertas profesionales que inspiran confianza.
+          </p>
+        </div>
+        <div class="role-card" id="role-2">
+          <div class="role-card__icon">
+            <i data-lucide="briefcase" class="icon-lg"></i>
+          </div>
+          <h3 class="role-card__title">Ejecutivos comerciales</h3>
+          <p class="role-card__description">
+            Acceden a un pipeline de operaciones con toda la información necesaria para cerrar ventas.
+          </p>
+        </div>
+        <div class="role-card" id="role-3">
+          <div class="role-card__icon">
+            <i data-lucide="bar-chart-3" class="icon-lg"></i>
+          </div>
+          <h3 class="role-card__title">Analistas financieros</h3>
+          <p class="role-card__description">
+            Evalúan rentabilidad y riesgo con indicadores calculados automáticamente desde el sistema.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section" id="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-box__glow" aria-hidden="true"></div>
+        <div class="cta-box__accent-line" aria-hidden="true"></div>
+        <div class="cta-box__content">
+          <h2 class="cta-box__title">Tu equipo ya no debería<br>calcular esto a mano.</h2>
+          <p class="cta-box__subtitle">
+            Automatiza la simulación de créditos vehiculares y reduce errores desde el primer día.
+          </p>
+          <a href="#" class="btn btn--primary btn--lg" id="cta-access-btn">
+            Solicitar acceso
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo-row">
+          <div class="navbar__logo">
+            <i data-lucide="layers" class="icon-sm"></i>
+          </div>
+          <span class="navbar__name">Capital Cruise</span>
+        </div>
+        <p class="footer__tagline">
+          Plataforma de gestión de créditos vehiculares para instituciones financieras en Perú.
+        </p>
+      </div>
+      <div class="footer__links">
+        <a href="#hero" class="footer__link">Inicio</a>
+        <a href="#features" class="footer__link">Características</a>
+        <a href="#cta" class="footer__link">Contacto</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer__bottom">
+        © <span id="footer-year"></span> Capital Cruise. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
